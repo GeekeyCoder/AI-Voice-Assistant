@@ -50,15 +50,10 @@ def sendmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('umairiqbal9889@gmail.com', 'Salman44!!!!')
-    server.sendmail('umairiqbal9889@gmail.com',to,content)
+    server.login('geekycoder886@gmail.com', 'Ayush!!!!')
+    server.sendmail('geekycoder886@gmail.com',to,content)
     server.close()
     
-    
-    
-
-
-
 if __name__=="__main__":
     wishMe()
     while True:
@@ -66,7 +61,7 @@ if __name__=="__main__":
         query = takecommand().lower()
         
         if "wikipedia" in query:
-            speak("Searching wikipedia...")
+            speak("Searching wiki...")
             query.replace("wikipedia","")
             results = wikipedia.summary(query, sentences = 1 )
             speak("According to wikipedia")
@@ -83,7 +78,7 @@ if __name__=="__main__":
             webbrowser.open("google.com")
             
         elif "play music" in query:
-            music_dir = "E:\\The Polar Express (2004)[Dual Audio]\\asma"
+            music_dir = "C:\\Users\\HP\\Downloads\\Music\\Mi-Amor.mp3"
             songs = os.listdir(music_dir)
             #print(songs)
             a = random.randint(1,147)
@@ -94,7 +89,7 @@ if __name__=="__main__":
             speak(f"Sir the time is {strTime}")
             
         elif "open code " in query:
-            codePath = "C:\\Users\\Umair Iqbal\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            codePath = "C:\\Users\\HP\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code"
             os.startfile(codePath)
         
         elif "email to me" in query:
