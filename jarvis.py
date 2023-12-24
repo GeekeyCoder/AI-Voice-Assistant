@@ -33,7 +33,6 @@ def takecommand():
     with sr.Microphone() as source:
         print("Listining...")
         r.pause_threshold = 0.5 
-        
         audio = r.listen(source)
     try:
         print("Recognizing...")
@@ -50,7 +49,7 @@ def sendmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('geekycoder886@gmail.com', 'Ayush!!!!')
+    server.login('geekycoder886@gmail.com', 'Geekeycoder')
     server.sendmail('geekycoder886@gmail.com',to,content)
     server.close()
     
@@ -71,25 +70,23 @@ if __name__=="__main__":
         elif "open youtube" in query:
             webbrowser.open("youtube.com")
             
-        elif "open stackoverflow" in query:
-            webbrowser.open("stackoverflow")
+        elif "open stack overflow" in query:
+            webbrowser.open("stackoverflow.com")
             
         elif "open google" in query:
             webbrowser.open("google.com")
             
-        elif "play music" in query:
-            music_dir = "C:\\Users\\HP\\Downloads\\Music\\Mi-Amor.mp3"
-            songs = os.listdir(music_dir)
-            #print(songs)
-            a = random.randint(1,147)
-            os.startfile(os.path.join(music_dir, songs[a]))
+        elif "open spotify" in query:
+            music_dir = "C:\\Users\\hp\\AppData\\Local\\Microsoft\\WindowsApps\\Spotify.exe"
+            os.startfile(music_dir)
             
         elif "the time" in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            print(strTime)
             speak(f"Sir the time is {strTime}")
             
         elif "open code " in query:
-            codePath = "C:\\Users\\HP\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code"
+            codePath = "C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
         
         elif "email to me" in query:
@@ -102,6 +99,6 @@ if __name__=="__main__":
             except Exception as e:
                 print(e)
                 speak("sorry sir i am not able to send this email...")
-        elif "thank you bye" in query:
+        elif "thank you" in query:
             speak("Your welcome Sir")
             break
